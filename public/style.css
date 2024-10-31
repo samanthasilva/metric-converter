@@ -1,7 +1,187 @@
-code {
-    background-color: whitesmoke;
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-section, header {
+html {
+    height: 100%;
+    background: #f8f6f6f3;
+}
+
+body {
+    font-family: Montserrat, sans-serif;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+}
+
+code {
+    color: #6b6b6b;
+    font-size: 12px;
+}
+
+section {
     margin: 50px;
 }
+
+header {
+    font-family: Montserrat, sans-serif;
+    background-color: #fff;
+    color: #333;
+    border-bottom: 2px solid #d90f6a;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    text-align: center;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    z-index: 100;
+}
+
+h1 {
+    font-size: 20px;
+    font-family: Montserrat, sans-serif;
+    color: #2C3E50;
+    font-weight: normal;
+    margin-bottom: 18px;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+h2, h3, h4, h5 {
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+h6 {
+    font-weight: 600;
+    font-size: 24.6px;
+    margin-top: 100px;
+}
+
+.row .col {
+    margin-top: 20px;
+    padding: 0rem;
+}
+
+.section {
+    padding-top: 0;
+    padding-bottom: 0%;   
+
+}
+
+.row .col.s12 {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
+}
+
+card-panel, .results {
+    border-radius: 4px;
+    background: #f9f9f9;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    border: 1px solid #ededed;
+    color: #6b6b6b !important;
+    font-size: 12px;
+    padding: 20px;
+}
+
+input[type="text"], .input-field input[type="text"] {
+    padding: 15px;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 10px;
+    width: 90%;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: #2C3E50;
+    font-size: 13px;
+    border-bottom: 1px solid #ee0979;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  input[type="text"]:focus, .input-field input[type="text"]:focus {
+    border-bottom: 1px solid #d90f6a;
+    box-shadow: none; 
+  }
+
+  button, .action-button {
+    background-color: #ee0979 !important;
+    color: #fff !important;
+    border: none;
+    padding: 9px 20px;
+    cursor: pointer;
+    font-weight: normal;
+    border-radius: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    font-size: 11px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover, .action-button:hover {
+    background-color: #d90f6a !important;
+  }
+
+footer {
+    font-family: montserrat, arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+    border-top: 2px solid #d90f6a;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); 
+    font-weight: normal;
+    position: relative;
+    text-align: center;
+    position: fixed;
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    z-index: 10;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    z-index: 100; 
+    list-style-type: none;
+    text-transform: uppercase;
+    font-size: 10px;
+  }
+  
+  .cute-footer p {
+    margin: 5px 0;
+  }
+  
+  .cute-footer a {
+    color: #d90f6a;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .cute-footer .heart-link {
+    color: #d90f6a; 
+    font-size: 18px;
+    text-decoration: none;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .cute-footer .heart-link:hover {
+    transform: scale(1.2); 
+  }

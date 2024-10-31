@@ -1,44 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
   <head>
-    <title>Metric/Imperial Converter</title>
-    <meta name="description" content="An example of the Free Code Camp Metric/Imperial Converter Project">
-    <link id="favicon" rel="icon" href="https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png" type="image/x-icon">
+    <title>Conversor Métrico/Imperial</title>
+    <meta name="description" content="Exemplo do Projeto Conversor Métrico/Imperial">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <link rel="prefetch" as="style" href="/_ar-assets/requester-legacy-3853d692860afdfe.css" id="requester-styles">
     <link rel="stylesheet" href="./public/style.css">
   </head>
-  <body>
+  <body class="header">
     <header>
-      <h1>Metric/Imperial Converter</h1>
+      <h1>Conversor Métrico/Imperial</h1>
     </header>
-    <hr style='margin: 50px'>
-    <section>
-      <h3>Example usage</h3>
-      <code>/api/convert?input=4gal</code><br>
-      <code>/api/convert?input=1/2km</code><br>
-      <code>/api/convert?input=5.4/3lbs</code><br>
-      <code>/api/convert?input=kg</code><br>
-      <h3>Example return</h3>
-      <code>{ initNum: 3.1, initUnit: 'mi', returnNum: 4.98895, returnUnit: 'km', string: '3.1 miles converts to 4.98895 kilometers' }</code>
-    </section>
-    <hr style='margin: 50px'>
-    <section>
-      <div id='testui' >
-        <h3 style="text-align: left">Front-End</h3>
-        <form id="convertForm" class="border">
-          <input type="text" id="convertField" name="input" placeholder="3.1mi" style="width: 200px">
-          <input id="convert" type="submit" value='Convert!'>
-        </form>
-        <p id='result'></p>
-        <code id='jsonResult'></code>
-      </div>
-    </section>
-    <!-- Your web-app is https, so your scripts need to be too -->
-    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
-            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
-            crossorigin="anonymous"></script>
+
+    <main class="container">
+      <!-- Conversão -->
+      <section class="section">
+        <h6>Conversão</h6>
+        <div class="row">
+          <form id="convertForm" class="col s12">
+            <div class="input-field col s10 m8">
+              <input type="text" id="convertField" name="input" class="validate" placeholder="3.1mi" required>
+              <label for="convertField">Entrada para Conversão</label>
+            </div>
+            <div class="input-field col s2 m4">
+              <button id="convert" type="submit" class="button">Converter!</button>
+            </div>
+          </form>
+        </div>
+        <div id="resultSection" class="section">
+          <p id="result" class="flow-text"></p>
+          <pre id="jsonResult" class="results"></pre>
+        </div>
+      </section>
+
+      <!-- Exemplo de uso -->
+      <section class="section">
+        <h5>Exemplo de Uso</h5>
+        <div class="card-panel">
+          <code>/api/convert?input=4gal</code><br>
+          <code>/api/convert?input=1/2km</code><br>
+          <code>/api/convert?input=5.4/3lbs</code><br>
+          <code>/api/convert?input=kg</code>
+        </div>
+      </section>
+
+      <!-- Exemplo de retorno -->
+      <section class="section">
+        <h5>Exemplo de Retorno</h5>
+        <div class="card-panel">
+          <code>{ initNum: 3.1, initUnit: 'mi', returnNum: 4.98895, returnUnit: 'km', string: '3.1 miles converts to 4.98895 kilometers' }</code>
+        </div>
+      </section>
+    </main>
+
+    <!-- Materialize JavaScript and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
     <script>
       $(function() {
         $('#convertForm').submit(function(event) {
@@ -49,11 +70,19 @@
             data: $('#convertForm').serialize(),
             success: function(data) {
               $('#result').text(data.string || data);
-              $('#jsonResult').text(JSON.stringify(data));
+              $('#jsonResult').text(JSON.stringify(data, null, 2));
             }
           });
         });
       });
-   </script>
+    </script>
+
+    <footer class="cute-footer">
+      <p>
+        Desenvolvido 
+        <a href="https://github.com/samanthasilva/metric-converter" target="_blank" class="heart-link">❤</a>
+        por Samantha Silva
+      </p>
+    </footer>
   </body>
 </html>
